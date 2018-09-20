@@ -1,0 +1,6 @@
+[
+    {
+        "code": "const myPromise1 = new Promise((resolve, reject) => {\n    setTimeout(() => {\n        if (true) {\n            resolve('OK');\n        } else {\n            reject('Failed');\n        }\n    }, 1000);\n});\n\nmyPromise1.then((resp) => {\n    return 10;\n}).then((resp) => {\n    console.warn(resp);\n}).catch((err) => {\n    console.error(err);\n}).finally(() => {\n   console.warn('DONE');\n});",
+        "result": ""
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "code": "const first = 'first';\nconst string1 = `This is the ${first} example for template String`;",
+        "result": "This is the first example for template String"
+    },
+    {
+        "code": "const string2 = `This is ${ string1 ? 'another' : 'first' } sample for template String`;",
+        "result": "This is another sample for template String"
+    },
+    {
+        "code": "const string3 = `1 + 2 = ${ 1 + 2 }`;",
+        "result": "1 + 2 = 3"
+    },
+    {
+        "code": "const multiLineString = `This is line 1 \n                       This is line 2`",
+        "result": "This is line 1 \n This is line 2"
+    },
+    {
+        "code": "const rawStr = String.raw`This is string ${1+2}!`;",
+        "result": "This is string 3!"
+    },
+    {
+        "code": "const taggedTemplate1 = (strings, param1, param2) => {\n    const string = strings[0];\n    return `${string} has parameters: ${param1} , ${param2}`;\n};\n\nconst {a, b} = {a: 'a', b: 'b'};\ntaggedTemplate1`This function ${a}, ${b}`",
+        "result": "This function has parameters: a , b"
+    },
+    {
+        "code": "const taggedTemplate2 = (strings, param1) => strings.raw[0];\ntaggedTemplate2`This is \\n string`;",
+        "result": "This is \\n string"
+    },
+    {
+        "code": "const taggedTemplate3 = (strings, param1) => strings[0];\ntaggedTemplate3`This is \\n string`;",
+        "result": "This is \n string"
+    }
+
+]

@@ -1,14 +1,12 @@
-// import css from './statics/styles.css';
+const render = () => {
+    return <div>
+        <div>
+            <div>
+                <a href="/">Back</a>
+                <h3> Callback</h3>
+            </div>
+        </div>
+    </div>
+};
 
-export default () =>
-  <div>
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta charSet="utf-8" />
-    </head>
-    <style jsx global>{`
-      body { 
-        
-      }
-    `}</style>
-  </div>
+export default render

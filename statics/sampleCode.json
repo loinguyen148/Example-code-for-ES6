@@ -1,6 +1,0 @@
-[
-  {
-    "code": "const first = 'first';\nconst string1 = `This is the ${first} example for template String`;",
-    "result": "This is the first example for template String"
-  }
-]

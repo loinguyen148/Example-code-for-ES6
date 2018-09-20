@@ -1,28 +1,16 @@
-import sampleCode from '../statics/sampleCode.json';
-const sample = [
-  {
-    code: `&nbsp;`,
-    result: 'This first example for template String'
-  }
-];
+import sampleCode from '../statics/sampleCode/templateString.json';
+import CodeSection from '../components/code.js';
 
-
-export default () =>
-  <div>
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta charSet="utf-8" />
-    </head>
-    <style jsx global>{`
-      ul {
+const globalCSS = `
+    ul {
         list-style: none;
-      }
+    }
 
-      ul li > a {
+    ul li > a {
         text-decoration: none;
-      }
+    }
 
-      code {
+    .code {
         background-color: #ececec;
         border-radius: 3px;
         padding: 5px;
@@ -30,41 +18,52 @@ export default () =>
         font-family: courier, monospace;
         white-space: pre-wrap;
         text-align: left;
-      }
+    }
 
-      section {
+    section {
         background: #f7f7f7;
         border: 1px solid #d4d4d4;
         padding: 15px;
         margin: 20px;
-      }
+    }
 
-      section > div {
+    section > div {
         margin-top: 15px;
-      }
+    }
 
-      pre {
+    section div.result {
+        max-width: 100%;
+    }
+
+    section div.result > div {
         display: inline-block;
-      }
-    `}</style>
-    <body>
-      <div>
-        <a href="/">Back</a>
-        <h3> Template String</h3>
-      </div>
-      <section>
-        <code>
-          {sampleCode[0]['code']}
-        </code>
+        font-style: italic;
+        white-space: pre-wrap;
+    }
+
+    section div.result > strong {
+        margin-top: 10px;
+        margin-right: 20px;
+        display: inline-block;
+    }
+`;
+
+const render = () => {
+    return <div>
+        <style>{globalCSS}</style>
         <div>
-          <strong>=> </strong>
-          <pre>
-            {sampleCode[0]['result']}
-          </pre>
+            <div>
+                <a href="/">Back</a>
+                <h3> Template String</h3>
+            </div>
+            {
+                sampleCode.map((item, index) => {
+                    return <CodeSection key={index} code={item.code} result={item.result}></CodeSection>
+                })
+            }
         </div>
-      </section>
-    </body>
-  </div>
+    </div>
+};
 
+export default render
 
- 

@@ -21,7 +21,7 @@
     "start": "NODE_ENV=production next start",
     "lint": "standard"
   },
-  "repository": { 
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/loinguyen148/Example-code-for-ES6.git"
   },
