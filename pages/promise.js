@@ -35,7 +35,7 @@ const globalCSS = `
         max-width: 100%;
     }
 
-    section div.result > div {
+    section div.result  div {
         display: inline-block;
         font-style: italic;
         white-space: pre-wrap;

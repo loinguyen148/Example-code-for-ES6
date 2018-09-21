@@ -1,5 +1,3 @@
-import sampleCode from '../statics/sampleCode/templateString.json';
-
 const render = (props) => {
     return <section>
         <div className="code">

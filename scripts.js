@@ -161,3 +161,45 @@ const promise4 = new Promise((resolve, reject) => {
 Promise.race([promise3, promise4]).then(function(value) {
   console.log(value);
 });
+
+
+/* Async Await */
+const promise5 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('promise5');
+    }, 1000);
+  })
+};
+const promise6 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('promise6');
+    }, 2000);
+  })
+};
+const promise7 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('promise7');
+    }, 3000);
+  })
+};
+
+asyncFunc1 = async() => {
+  const a = await promise5();
+  const b = await promise6();
+  const c = await promise7();
+
+  console.warn(a, b, c)
+}
+
+asyncFunc2 = async() => {
+  const a = promise5();
+  const b = promise6();
+  const c = promise7();
+
+  console.warn(await a);
+  console.warn(await b);
+  console.warn(await c);
+}
